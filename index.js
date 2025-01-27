@@ -4,7 +4,10 @@ import cors from "cors";
 const port = process.env.PORT || 10000;
 import indexRoute from "./router/router.js"
 
-app.use(cors());
+app.use(cors({
+    origin: ' http://localhost:5173/document/',  
+    methods: ['GET', 'POST','PUT','PATCH','DELETE'],
+  }));
 app.use(express.json());
 
 app.use("/",indexRoute)
