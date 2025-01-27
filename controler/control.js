@@ -5,6 +5,8 @@ dotenv.config();
 
 
 async function register(req,res){
+    console.log("in");
+    
     const {name,email,password} = req.body
     try{
     if(name && email && password){  
@@ -14,12 +16,15 @@ async function register(req,res){
     }
     }
     catch(err){
+        console.log(err);
+        
     res.status(400).send("unsucess");
     console.log("email already exist");
     }   
     }
     
     async function login(req,res){
+        console.log("in");
     const {email,password} = req.body;
     try{
     const userData = await executeQuery(`SELECT * FROM users WHERE email=? AND password=? AND is_active=1`,[email,password])
@@ -34,6 +39,7 @@ async function register(req,res){
     }
     }
     catch(err){
+    console.log(err);
     
     res.status(400).json(400);
     } 
