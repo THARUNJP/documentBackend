@@ -6,7 +6,7 @@ dotenv.config();
 const DB = mysql.createPool({
 host: 'junction.proxy.rlwy.net', 
 user: 'root',                    
-password: 'cbafpqGFZYSLtaLDDSSuuBfxbumoVUpM', 
+password: process.env.db_pass, 
 database: 'railway',             
 port: 47681 ,      
 waitForConnections: true,
