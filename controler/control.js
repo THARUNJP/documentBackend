@@ -5,9 +5,8 @@ dotenv.config();
 
 
 async function register(req,res){
-    console.log("in");
     
-    const {name,email,password} = req.body
+   const {name,email,password} = req.body
     try{
     if(name && email && password){  
     const response = await executeQuery(`INSERT INTO users (name,email,password) VALUES(?, ?, ?)`,[name,email,password]);
@@ -18,7 +17,7 @@ async function register(req,res){
     catch(err){
         console.log(err);
         
-    res.status(400).send("unsucess");
+    res.status(400).send(err);
     console.log("email already exist");
     }   
     }
