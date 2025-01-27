@@ -1,7 +1,7 @@
 import express from "express";
 const app = express();
 import cors from "cors";
-const port = process.env.PORT || 10000;
+const port = process.env.PORT;
 import indexRoute from "./router/router.js"
 
 app.use(cors());
