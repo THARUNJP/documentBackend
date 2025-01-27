@@ -5,7 +5,7 @@ const port = process.env.PORT || 10000;
 import indexRoute from "./router/router.js"
 
 app.use(cors({
-    origin: '*',  
+    origin: 'http://localhost:5173/document',  
     methods: ['GET', 'POST','PUT','PATCH','DELETE'],
     credentials: true,
   }));
