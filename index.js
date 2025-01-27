@@ -5,7 +5,7 @@ const port = process.env.PORT || 10000;
 import indexRoute from "./router/router.js"
 
 app.use(cors({
-    origin: 'https://tharunjp.github.io/document/',  
+    origin: 'https://tharunjp.github.io',  
     methods: ['GET', 'POST','PUT','PATCH','DELETE'],
     credentials: true,
   }));
